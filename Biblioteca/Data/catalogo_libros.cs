@@ -106,4 +106,39 @@ public class catalogo_libros
         }
         return dt;
     }
+    public Libro BuscarPorId(int id)
+    {
+        Libro libroEncontrado = null;
+        try
+        {
+            string query = "SELECT * FROM Libros WHERE ID = @ID";
+            MySqlCommand cmd = new MySqlCommand(query, connection);
+            cmd.Parameters.AddWithValue("@ID", id);
+            connection.Open();
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                libroEncontrado = new Libro
+                {
+                    ID = reader.GetInt32("ID"),
+                    Titulo = reader.GetString("Titulo"),
+                    Autor = reader.GetString("Autor"),
+                    Genero = reader.GetString("Genero"),
+                    FechaPublicacion = reader.GetDateTime("FechaPublicacion"),
+                    Precio = reader.GetDecimal("Precio"),
+                    Disponible = reader.GetBoolean("Disponible")
+                };
+            }
+            reader.Close();
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Error al buscar el libro por ID: " + ex.Message);
+        }
+        finally
+        {
+            connection.Close();
+        }
+        return libroEncontrado;
+    }
 }

@@ -63,6 +63,16 @@ namespace Biblioteca.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_image_1717034647802 {
+            get {
+                object obj = ResourceManager.GetObject("download_image_1717034647802", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estanteria {
             get {
                 object obj = ResourceManager.GetObject("estanteria", resourceCulture);

@@ -110,7 +110,45 @@ namespace Biblioteca
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            //Falta chambear esto
+            
+                // Verificar si el TextBox de ID está vacío
+                if (string.IsNullOrWhiteSpace(txtID.Text))
+                {
+                    MessageBox.Show("Por favor, ingrese un ID para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Obtener el ID ingresado por el usuario
+                int idABuscar;
+                if (!int.TryParse(txtID.Text, out idABuscar))
+                {
+                    MessageBox.Show("El ID ingresado no es válido. Por favor, ingrese un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // Realizar la búsqueda del libro por ID en la base de datos
+                Libro libroEncontrado = catalogo.BuscarPorId(idABuscar);
+
+                // Verificar si se encontró el libro
+                if (libroEncontrado != null)
+                {
+                    // Mostrar el libro encontrado en los controles de tu formulario
+                    MostrarLibroEncontrado(libroEncontrado);
+                }
+                else
+                {
+                    MessageBox.Show("No se encontró ningún libro con el ID especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            // Método para mostrar el libro encontrado en los controles del formulario
+             void MostrarLibroEncontrado(Libro libro)
+            {
+                txtTitulo.Text = libro.Titulo;
+                txtAutor.Text = libro.Autor;
+                txtGenero.Text = libro.Genero;
+                dtpFechaPublicacion.Value = libro.FechaPublicacion;
+                txtPrecio.Text = libro.Precio.ToString();
+                chkDisponible.Checked = libro.Disponible;
+            }
         }
     }
 }
