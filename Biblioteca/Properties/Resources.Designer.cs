@@ -73,6 +73,16 @@ namespace Biblioteca.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download_image_1717043906425 {
+            get {
+                object obj = ResourceManager.GetObject("download_image_1717043906425", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estanteria {
             get {
                 object obj = ResourceManager.GetObject("estanteria", resourceCulture);
@@ -116,6 +126,26 @@ namespace Biblioteca.Properties {
         internal static System.Drawing.Bitmap libro4 {
             get {
                 object obj = ResourceManager.GetObject("libro4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libro5 {
+            get {
+                object obj = ResourceManager.GetObject("libro5", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap libro6 {
+            get {
+                object obj = ResourceManager.GetObject("libro6", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
