@@ -13,6 +13,13 @@ namespace Biblioteca
 {
     public partial class Form1 : Form
     {
+        private string[] SeleccionarGenero = {
+    "Novela",
+    "Clasico",
+    "Misterio",
+    "Distopia",
+    "Fabula"
+        };
         catalogo_libros catalogo = new catalogo_libros();
         public Form1()
         {
@@ -24,16 +31,16 @@ namespace Biblioteca
             LeerLibros();
         }
         //------------------------------------------------------------------------------------------
-        private void LeerLibros()
+        private void LeerLibros(string genero = null)
         {
-            DataTable dt = catalogo.LeerTodos();
+            DataTable dt = string.IsNullOrEmpty(genero) ? catalogo.LeerTodos() : catalogo.LeerPorGenero(genero);
             dataGridView.DataSource = dt;
         }
         //------------------------------------------------------------------------------------------
         private bool ValidarDatos()
         {
             if (string.IsNullOrEmpty(txtTitulo.Text) || string.IsNullOrEmpty(txtAutor.Text) ||
-                string.IsNullOrEmpty(txtGenero.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+                cmbGenero.SelectedItem == null || string.IsNullOrEmpty(txtPrecio.Text))
             {
                 MessageBox.Show("Por favor, complete todos los campos.");
                 return false;
@@ -43,29 +50,27 @@ namespace Biblioteca
         //----------------------------------------------------------------------------------------
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            
-               if (ValidarDatos())
+            if (ValidarDatos())
+            {
+                Libro libro = new Libro
                 {
-                    Libro libro = new Libro
-                    {
-                        Titulo = txtTitulo.Text,
-                        Autor = txtAutor.Text,
-                        Genero = txtGenero.Text,
-                        FechaPublicacion = dtpFechaPublicacion.Value,
-                        Precio = decimal.Parse(txtPrecio.Text),
-                        Disponible = chkDisponible.Checked
-                    };
-                    try
-                    {
-                        catalogo.Insertar(libro);
-                        LeerLibros();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("Error al agregar el libro: " + ex.Message);
-                    }
+                    Titulo = txtTitulo.Text,
+                    Autor = txtAutor.Text,
+                    Genero = cmbGenero.SelectedItem.ToString(),
+                    FechaPublicacion = dtpFechaPublicacion.Value,
+                    Precio = decimal.Parse(txtPrecio.Text),
+                    Disponible = chkDisponible.Checked
+                };
+                try
+                {
+                    catalogo.Insertar(libro);
+                    LeerLibros();
                 }
-            
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al agregar el libro: " + ex.Message);
+                }
+            }
         }
         //--------------------------------------------------------------------------------------------
         private void btnActualizar_Click_1(object sender, EventArgs e)
@@ -77,7 +82,7 @@ namespace Biblioteca
                     ID = int.Parse(txtID.Text),
                     Titulo = txtTitulo.Text,
                     Autor = txtAutor.Text,
-                    Genero = txtGenero.Text,
+                    Genero = cmbGenero.SelectedItem.ToString(),
                     FechaPublicacion = dtpFechaPublicacion.Value,
                     Precio = decimal.Parse(txtPrecio.Text),
                     Disponible = chkDisponible.Checked
@@ -110,46 +115,72 @@ namespace Biblioteca
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
-                // Verificar si el TextBox de ID está vacío
-                if (string.IsNullOrWhiteSpace(txtID.Text))
-                {
-                    MessageBox.Show("Por favor, ingrese un ID para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Obtener el ID ingresado por el usuario
-                int idABuscar;
-                if (!int.TryParse(txtID.Text, out idABuscar))
-                {
-                    MessageBox.Show("El ID ingresado no es válido. Por favor, ingrese un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                // Realizar la búsqueda del libro por ID en la base de datos
-                Libro libroEncontrado = catalogo.BuscarPorId(idABuscar);
-
-                // Verificar si se encontró el libro
-                if (libroEncontrado != null)
-                {
-                    // Mostrar el libro encontrado en los controles de tu formulario
-                    MostrarLibroEncontrado(libroEncontrado);
-                }
-                else
-                {
-                    MessageBox.Show("No se encontró ningún libro con el ID especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-            // Método para mostrar el libro encontrado en los controles del formulario
-             void MostrarLibroEncontrado(Libro libro)
+            if (string.IsNullOrWhiteSpace(txtID.Text))
             {
-                txtTitulo.Text = libro.Titulo;
-                txtAutor.Text = libro.Autor;
-                txtGenero.Text = libro.Genero;
-                dtpFechaPublicacion.Value = libro.FechaPublicacion;
-                txtPrecio.Text = libro.Precio.ToString();
-                chkDisponible.Checked = libro.Disponible;
+                MessageBox.Show("Por favor, ingrese un ID para buscar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            int idABuscar;
+            if (!int.TryParse(txtID.Text, out idABuscar))
+            {
+                MessageBox.Show("El ID ingresado no es válido. Por favor, ingrese un número entero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            Libro libroEncontrado = catalogo.BuscarPorId(idABuscar);
+
+            if (libroEncontrado != null)
+            {
+                MostrarLibroEncontrado(libroEncontrado);
+            }
+            else
+            {
+                MessageBox.Show("No se encontró ningún libro con el ID especificado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void MostrarLibroEncontrado(Libro libro)
+        {
+            txtTitulo.Text = libro.Titulo;
+            txtAutor.Text = libro.Autor;
+            cmbGenero.SelectedItem = libro.Genero;
+            dtpFechaPublicacion.Value = libro.FechaPublicacion;
+            txtPrecio.Text = libro.Precio.ToString();
+            chkDisponible.Checked = libro.Disponible;
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            cmbGenero.Items.AddRange(SeleccionarGenero);
+            dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
+            LeerLibros();
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            
+                string generoSeleccionado = cmbGenero.SelectedItem?.ToString();
+                LeerLibros(generoSeleccionado);
+            
+        }
+
+        private void dataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = dataGridView.SelectedRows[0];
+                txtID.Text = row.Cells["ID"].Value.ToString();
+                txtTitulo.Text = row.Cells["Titulo"].Value.ToString();
+                txtAutor.Text = row.Cells["Autor"].Value.ToString();
+                cmbGenero.SelectedItem = row.Cells["Genero"].Value.ToString();
+                dtpFechaPublicacion.Value = Convert.ToDateTime(row.Cells["FechaPublicacion"].Value);
+                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
+                chkDisponible.Checked = Convert.ToBoolean(row.Cells["Disponible"].Value);
+            }
+        }
+
+        
     }
 }
 

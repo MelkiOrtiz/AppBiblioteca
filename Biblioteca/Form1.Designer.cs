@@ -39,7 +39,6 @@
             this.txtID = new System.Windows.Forms.TextBox();
             this.txtTitulo = new System.Windows.Forms.TextBox();
             this.txtAutor = new System.Windows.Forms.TextBox();
-            this.txtGenero = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.dtpFechaPublicacion = new System.Windows.Forms.DateTimePicker();
             this.chkDisponible = new System.Windows.Forms.CheckBox();
@@ -49,6 +48,8 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.cmbGenero = new System.Windows.Forms.ComboBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,7 +62,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(361, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 40);
+            this.label1.Size = new System.Drawing.Size(204, 39);
             this.label1.TabIndex = 0;
             this.label1.Text = "Biblioteca";
             // 
@@ -179,16 +180,6 @@
             this.txtAutor.TabIndex = 10;
             this.txtAutor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // txtGenero
-            // 
-            this.txtGenero.BackColor = System.Drawing.Color.Bisque;
-            this.txtGenero.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGenero.Location = new System.Drawing.Point(156, 200);
-            this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(200, 26);
-            this.txtGenero.TabIndex = 11;
-            this.txtGenero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // txtPrecio
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.Bisque;
@@ -226,6 +217,7 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(512, 150);
             this.dataGridView.TabIndex = 15;
+            this.dataGridView.SelectionChanged += new System.EventHandler(this.dataGridView_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -297,6 +289,25 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // cmbGenero
+            // 
+            this.cmbGenero.BackColor = System.Drawing.Color.Bisque;
+            this.cmbGenero.FormattingEnabled = true;
+            this.cmbGenero.Location = new System.Drawing.Point(156, 200);
+            this.cmbGenero.Name = "cmbGenero";
+            this.cmbGenero.Size = new System.Drawing.Size(200, 24);
+            this.cmbGenero.TabIndex = 17;
+            // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(605, 426);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(75, 23);
+            this.btnFiltrar.TabIndex = 18;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -304,12 +315,13 @@
             this.BackgroundImage = global::Biblioteca.Properties.Resources.download_image_1717034647802;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(950, 480);
+            this.Controls.Add(this.btnFiltrar);
+            this.Controls.Add(this.cmbGenero);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.chkDisponible);
             this.Controls.Add(this.dtpFechaPublicacion);
             this.Controls.Add(this.txtPrecio);
-            this.Controls.Add(this.txtGenero);
             this.Controls.Add(this.txtAutor);
             this.Controls.Add(this.txtTitulo);
             this.Controls.Add(this.txtID);
@@ -324,6 +336,7 @@
             this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -344,7 +357,6 @@
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.TextBox txtTitulo;
         private System.Windows.Forms.TextBox txtAutor;
-        private System.Windows.Forms.TextBox txtGenero;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.DateTimePicker dtpFechaPublicacion;
         private System.Windows.Forms.CheckBox chkDisponible;
@@ -354,6 +366,8 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.ComboBox cmbGenero;
+        private System.Windows.Forms.Button btnFiltrar;
     }
 }
 

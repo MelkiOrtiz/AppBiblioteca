@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Data.SqlClient;
 using System.Windows.Forms;
 
 public class catalogo_libros
@@ -12,6 +13,20 @@ public class catalogo_libros
     public catalogo_libros()
     {
         connection = new MySqlConnection(connectionString);
+    }
+    public DataTable LeerPorGenero(string genero)
+    {
+        using (MySqlConnection connection = new MySqlConnection(connectionString))
+        {
+            MySqlCommand command = new MySqlCommand("SELECT * FROM Libros WHERE Genero = @Genero", connection);
+            command.Parameters.AddWithValue("@Genero", genero);
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            return dt;
+        }
     }
 
     public void Insertar(Libro libro)
