@@ -28,7 +28,7 @@ public class catalogo_libros
             return dt;
         }
     }
-
+    //-----------------------------------------------------------------------------------------------------------
     public void Insertar(Libro libro)
     {
         try
@@ -53,7 +53,7 @@ public class catalogo_libros
             connection.Close();
         }
     }
-
+    //--------------------------------------------------------------------------------------------------------
     public void Actualizar(Libro libro)
     {
         try
@@ -79,7 +79,7 @@ public class catalogo_libros
             connection.Close();
         }
     }
-
+    //---------------------------------------------------------------------------------------------------------
     public void Eliminar(int id)
     {
         try
@@ -99,7 +99,7 @@ public class catalogo_libros
             connection.Close();
         }
     }
-
+    //------------------------------------------------------------------------------------------------------------
     public DataTable LeerTodos()
     {
         DataTable dt = new DataTable();
@@ -121,6 +121,7 @@ public class catalogo_libros
         }
         return dt;
     }
+    //----------------------------------------------------------------------------------------------------------
     public Libro BuscarPorId(int id)
     {
         Libro libroEncontrado = null;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -197,7 +198,7 @@
             // 
             this.dtpFechaPublicacion.Location = new System.Drawing.Point(226, 56);
             this.dtpFechaPublicacion.Name = "dtpFechaPublicacion";
-            this.dtpFechaPublicacion.Size = new System.Drawing.Size(244, 22);
+            this.dtpFechaPublicacion.Size = new System.Drawing.Size(321, 22);
             this.dtpFechaPublicacion.TabIndex = 13;
             // 
             // chkDisponible
@@ -305,9 +306,9 @@
             // 
             this.btnFiltrar.BackgroundImage = global::Biblioteca.Properties.Resources.libro5;
             this.btnFiltrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFiltrar.Location = new System.Drawing.Point(32, 12);
+            this.btnFiltrar.Location = new System.Drawing.Point(38, 21);
             this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(139, 50);
+            this.btnFiltrar.Size = new System.Drawing.Size(122, 37);
             this.btnFiltrar.TabIndex = 18;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
@@ -333,12 +334,13 @@
             this.btnSiguiente.BackgroundImage = global::Biblioteca.Properties.Resources.libro6;
             this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSiguiente.Location = new System.Drawing.Point(32, 83);
+            this.btnSiguiente.Location = new System.Drawing.Point(38, 92);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(139, 50);
+            this.btnSiguiente.Size = new System.Drawing.Size(122, 37);
             this.btnSiguiente.TabIndex = 19;
             this.btnSiguiente.Text = "Siguiente";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // Form1
             // 
@@ -366,6 +368,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load_1);

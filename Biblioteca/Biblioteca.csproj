@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\catalogo_libros.cs" />
+    <Compile Include="Data\Models\LibroCursor.cs" />
     <Compile Include="Data\Models\Libro.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
