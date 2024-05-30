@@ -56,10 +56,12 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Stencil", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(406, 9);
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Stencil", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(361, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 27);
+            this.label1.Size = new System.Drawing.Size(210, 40);
             this.label1.TabIndex = 0;
             this.label1.Text = "Biblioteca";
             // 
@@ -81,7 +83,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label3.Location = new System.Drawing.Point(31, 122);
+            this.label3.Location = new System.Drawing.Point(31, 128);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(57, 20);
             this.label3.TabIndex = 2;
@@ -93,7 +95,7 @@
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label4.Location = new System.Drawing.Point(31, 150);
+            this.label4.Location = new System.Drawing.Point(31, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 20);
             this.label4.TabIndex = 3;
@@ -105,7 +107,7 @@
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(31, 178);
+            this.label5.Location = new System.Drawing.Point(31, 200);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 20);
             this.label5.TabIndex = 4;
@@ -117,7 +119,7 @@
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(31, 206);
+            this.label6.Location = new System.Drawing.Point(31, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 20);
             this.label6.TabIndex = 5;
@@ -141,7 +143,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label8.Location = new System.Drawing.Point(31, 238);
+            this.label8.Location = new System.Drawing.Point(31, 274);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(92, 20);
             this.label8.TabIndex = 7;
@@ -149,38 +151,53 @@
             // 
             // txtID
             // 
+            this.txtID.BackColor = System.Drawing.Color.Bisque;
+            this.txtID.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.Location = new System.Drawing.Point(156, 94);
             this.txtID.Name = "txtID";
-            this.txtID.Size = new System.Drawing.Size(100, 22);
+            this.txtID.Size = new System.Drawing.Size(200, 26);
             this.txtID.TabIndex = 8;
+            this.txtID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtTitulo
             // 
-            this.txtTitulo.Location = new System.Drawing.Point(156, 122);
+            this.txtTitulo.BackColor = System.Drawing.Color.Bisque;
+            this.txtTitulo.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitulo.Location = new System.Drawing.Point(156, 128);
             this.txtTitulo.Name = "txtTitulo";
-            this.txtTitulo.Size = new System.Drawing.Size(100, 22);
+            this.txtTitulo.Size = new System.Drawing.Size(200, 26);
             this.txtTitulo.TabIndex = 9;
+            this.txtTitulo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtAutor
             // 
-            this.txtAutor.Location = new System.Drawing.Point(156, 150);
+            this.txtAutor.BackColor = System.Drawing.Color.Bisque;
+            this.txtAutor.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAutor.Location = new System.Drawing.Point(156, 164);
             this.txtAutor.Name = "txtAutor";
-            this.txtAutor.Size = new System.Drawing.Size(100, 22);
+            this.txtAutor.Size = new System.Drawing.Size(200, 26);
             this.txtAutor.TabIndex = 10;
+            this.txtAutor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtGenero
             // 
-            this.txtGenero.Location = new System.Drawing.Point(156, 178);
+            this.txtGenero.BackColor = System.Drawing.Color.Bisque;
+            this.txtGenero.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGenero.Location = new System.Drawing.Point(156, 200);
             this.txtGenero.Name = "txtGenero";
-            this.txtGenero.Size = new System.Drawing.Size(100, 22);
+            this.txtGenero.Size = new System.Drawing.Size(200, 26);
             this.txtGenero.TabIndex = 11;
+            this.txtGenero.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(156, 206);
+            this.txtPrecio.BackColor = System.Drawing.Color.Bisque;
+            this.txtPrecio.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(156, 238);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(100, 22);
+            this.txtPrecio.Size = new System.Drawing.Size(200, 26);
             this.txtPrecio.TabIndex = 12;
+            this.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // dtpFechaPublicacion
             // 
@@ -192,7 +209,7 @@
             // chkDisponible
             // 
             this.chkDisponible.AutoSize = true;
-            this.chkDisponible.Location = new System.Drawing.Point(156, 238);
+            this.chkDisponible.Location = new System.Drawing.Point(156, 274);
             this.chkDisponible.Name = "chkDisponible";
             this.chkDisponible.Size = new System.Drawing.Size(127, 20);
             this.chkDisponible.TabIndex = 14;
@@ -201,8 +218,9 @@
             // 
             // dataGridView
             // 
+            this.dataGridView.BackgroundColor = System.Drawing.Color.Bisque;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(35, 286);
+            this.dataGridView.Location = new System.Drawing.Point(35, 311);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.RowHeadersWidth = 51;
             this.dataGridView.RowTemplate.Height = 24;
@@ -228,7 +246,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEliminar.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEliminar.BackgroundImage = global::Biblioteca.Properties.Resources.libro4;
             this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnEliminar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
