@@ -19,9 +19,14 @@ namespace Biblioteca
 
         private void btnComenzar_Click(object sender, EventArgs e)
         {
-            Form1 forma2 = new Form1();
-            forma2.Show();
+       
             this.Hide();
+
+            Form1 forma1 = new Form1();
+            forma1.Show();
+
+            
+            forma1.FormClosed += (s, args) => this.Close();
         }
     }
 }

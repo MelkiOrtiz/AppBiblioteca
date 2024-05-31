@@ -14,7 +14,8 @@ namespace Biblioteca
             "Clasico",
             "Misterio",
             "Distopia",
-            "Fabula"
+            "Fabula",
+            "Juego De Tronos"
         };
 
         catalogo_libros catalogo = new catalogo_libros();
@@ -24,6 +25,8 @@ namespace Biblioteca
         public Form1()
         {
             InitializeComponent();
+            this.FormClosed += new FormClosedEventHandler(Form1_FormClosed);
+
         }
 
         //------------------------------------------------------------------------------------------
@@ -223,6 +226,11 @@ namespace Biblioteca
             }
 
             MostrarLibro(todosLosLibros[cursor.Current]);
+        }
+
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
