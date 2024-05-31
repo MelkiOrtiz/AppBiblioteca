@@ -127,6 +127,9 @@
   <data name="download_image_1717043906425" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_image_1717043906425.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="derecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\derecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="libro3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\libro3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,13 +139,19 @@
   <data name="libro1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\libro1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="libro6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\libro6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="libro5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\libro5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="download_image_1717034647802" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\download_image_1717034647802.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="libro6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\libro6.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="estanteria1x1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\estanteria1x1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="izquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\izquierda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

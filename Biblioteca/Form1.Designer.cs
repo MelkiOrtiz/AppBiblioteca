@@ -53,6 +53,7 @@
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -296,10 +297,11 @@
             // cmbGenero
             // 
             this.cmbGenero.BackColor = System.Drawing.Color.Bisque;
+            this.cmbGenero.Font = new System.Drawing.Font("Modern No. 20", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGenero.FormattingEnabled = true;
             this.cmbGenero.Location = new System.Drawing.Point(156, 200);
             this.cmbGenero.Name = "cmbGenero";
-            this.cmbGenero.Size = new System.Drawing.Size(200, 24);
+            this.cmbGenero.Size = new System.Drawing.Size(200, 28);
             this.cmbGenero.TabIndex = 17;
             // 
             // btnFiltrar
@@ -321,6 +323,7 @@
             this.groupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.groupBox2.Controls.Add(this.btnSiguiente);
             this.groupBox2.Controls.Add(this.btnFiltrar);
+            this.groupBox2.Controls.Add(this.btnAtras);
             this.groupBox2.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.groupBox2.Location = new System.Drawing.Point(411, 128);
             this.groupBox2.Name = "groupBox2";
@@ -334,13 +337,26 @@
             this.btnSiguiente.BackgroundImage = global::Biblioteca.Properties.Resources.libro6;
             this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSiguiente.Location = new System.Drawing.Point(38, 92);
+            this.btnSiguiente.Location = new System.Drawing.Point(99, 91);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(122, 37);
+            this.btnSiguiente.Size = new System.Drawing.Size(75, 37);
             this.btnSiguiente.TabIndex = 19;
-            this.btnSiguiente.Text = "Siguiente";
+            this.btnSiguiente.Text = "Sig.";
             this.btnSiguiente.UseVisualStyleBackColor = true;
             this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
+            // 
+            // btnAtras
+            // 
+            this.btnAtras.BackgroundImage = global::Biblioteca.Properties.Resources.libro6;
+            this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtras.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAtras.Location = new System.Drawing.Point(18, 91);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(75, 37);
+            this.btnAtras.TabIndex = 20;
+            this.btnAtras.Text = "Atras";
+            this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // Form1
             // 
@@ -406,6 +422,7 @@
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnAtras;
     }
 }
 

@@ -210,6 +210,19 @@ namespace Biblioteca
             MostrarLibro(todosLosLibros[cursor.Current]);
         }
 
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (cursor.Current > 0)
+            {
+                cursor.Current--;
+            }
+            else
+            {
+                cursor.Current = cursor.Total - 1;
+                MessageBox.Show("Inicio de los registros, volviendo al final.");
+            }
 
+            MostrarLibro(todosLosLibros[cursor.Current]);
+        }
     }
 }
