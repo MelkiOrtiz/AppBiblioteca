@@ -63,6 +63,26 @@ namespace Biblioteca.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bookmark_11588203 {
+            get {
+                object obj = ResourceManager.GetObject("bookmark_11588203", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bookmark_346034 {
+            get {
+                object obj = ResourceManager.GetObject("bookmark_346034", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap derecha {
             get {
                 object obj = ResourceManager.GetObject("derecha", resourceCulture);
@@ -176,6 +196,26 @@ namespace Biblioteca.Properties {
         internal static System.Drawing.Bitmap libro6 {
             get {
                 object obj = ResourceManager.GetObject("libro6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PortadaLibro {
+            get {
+                object obj = ResourceManager.GetObject("PortadaLibro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap save_instagram_5728196 {
+            get {
+                object obj = ResourceManager.GetObject("save-instagram_5728196", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
